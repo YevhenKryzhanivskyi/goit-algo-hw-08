@@ -3,13 +3,7 @@ from typing import List
 
 
 def merge_k_lists(lists: List[List[int]]) -> List[int]:
-    """
-    Об'єднує k відсортованих списків у один відсортований список,
-    використовуючи мінімальну купу.
-
-    :param lists: список k відсортованих списків
-    :return: один відсортований список
-    """
+   #  Об'єднує k відсортованих списків в один відсортований список.
     heap = []
     result = []
 
@@ -18,7 +12,7 @@ def merge_k_lists(lists: List[List[int]]) -> List[int]:
         if lst:  # перевірка, що список не порожній
             heapq.heappush(heap, (lst[0], list_idx, 0))
 
-    # Дістаємо найменший елемент і додаємо наступний з того ж списку
+    # Дістаємо найменший елемент та додаємо наступний з того ж списку
     while heap:
         value, list_idx, elem_idx = heapq.heappop(heap)
         result.append(value)
